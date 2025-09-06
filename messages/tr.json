@@ -1,0 +1,26 @@
+{
+  "Index": {
+    "title": "E-Ticaret Uygulamasına Hoş Geldiniz!",
+    "description": "Öne çıkan ürünlerimizi keşfedin."
+  },
+  "Products": {
+    "title": "Tüm Ürünler",
+    "categoryLabel": "Kategori",
+    "sortByLabel": "Sırala"
+  },
+  "ProductDetail": {
+    "addToCartButton": "Sepete Ekle",
+    "addedToCartAlert": "{productName} sepete eklendi!"
+  },
+  "Cart": {
+    "title": "Alışveriş Sepetiniz",
+    "emptyCartMessage": "Sepetiniz boş.",
+    "totalLabel": "Toplam",
+    "removeItemButton": "Kaldır"
+  },
+  "Navigation": {
+    "home": "Anasayfa",
+    "products": "Ürünler",
+    "cart": "Sepet"
+  }
+}

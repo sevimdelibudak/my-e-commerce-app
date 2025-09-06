@@ -1,3 +1,4 @@
+// tsconfig.json
 {
   "compilerOptions": {
     "target": "ES2017",
@@ -18,8 +19,11 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".", // BU SATIR ÇOK ÖNEMLİ! Proje kökünü baseUrl olarak ayarlar.
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"], // Tüm proje kökünü temsil eder
+      "@/components/*": ["components/*"], // '@components' takma adını ayarlar
+      "@/lib/*": ["lib/*"]              // '@lib' takma adını ayarlar
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

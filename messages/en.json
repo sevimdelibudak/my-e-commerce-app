@@ -1,0 +1,26 @@
+{
+  "Index": {
+    "title": "Welcome to the E-Commerce App!",
+    "description": "Discover our featured products."
+  },
+  "Products": {
+    "title": "All Products",
+    "categoryLabel": "Category",
+    "sortByLabel": "Sort By"
+  },
+  "ProductDetail": {
+    "addToCartButton": "Add to Cart",
+    "addedToCartAlert": "{productName} has been added to the cart!"
+  },
+  "Cart": {
+    "title": "Your Shopping Cart",
+    "emptyCartMessage": "Your cart is empty.",
+    "totalLabel": "Total",
+    "removeItemButton": "Remove"
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "cart": "Cart"
+  }
+}

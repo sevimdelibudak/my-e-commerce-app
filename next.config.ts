@@ -1,7 +1,21 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Eski ve artık kullanılmayan yapılandırma
+  // images: {
+  //   domains: ['fakestoreapi.com'],
+  // },
 
-const nextConfig: NextConfig = {
-  /* config options here */
+  // Yeni ve önerilen yapılandırma
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fakestoreapi.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
