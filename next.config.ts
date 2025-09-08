@@ -1,21 +1,23 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Eski ve artık kullanılmayan yapılandırma
-  // images: {
-  //   domains: ['fakestoreapi.com'],
-  // },
+import createNextIntlPlugin from 'next-intl/plugin';
 
-  // Yeni ve önerilen yapılandırma
+// Point plugin to the request config file
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
+const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'fakestoreapi.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+        pathname: '/**'
+      }
+    ]
   },
+  turbopack: {
+    root: __dirname
+  }
 };
 
-module.exports = nextConfig;
+export default withNextIntl(nextConfig);
+
+

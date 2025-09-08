@@ -33,7 +33,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     alert(`${product.title} has been added to the cart!`);
 
     // Sepet sayfasına yönlendirme
-    router.push('/cart');
+    // Geçerli locale'i URL'den al ve cart'a o locale ile git
+    const locale = window.location.pathname.split('/')[1] || 'tr';
+    router.push(`/${locale}/cart`);
   };
 
   return (

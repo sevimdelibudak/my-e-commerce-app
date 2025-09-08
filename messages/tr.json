@@ -1,26 +1,56 @@
 {
-  "Index": {
+  "home": {
     "title": "E-Ticaret Uygulamasına Hoş Geldiniz!",
-    "description": "Öne çıkan ürünlerimizi keşfedin."
+    "subtitle": "Öne çıkan ürünlerimizi keşfedin."
   },
-  "Products": {
-    "title": "Tüm Ürünler",
-    "categoryLabel": "Kategori",
-    "sortByLabel": "Sırala"
-  },
-  "ProductDetail": {
-    "addToCartButton": "Sepete Ekle",
-    "addedToCartAlert": "{productName} sepete eklendi!"
-  },
-  "Cart": {
-    "title": "Alışveriş Sepetiniz",
-    "emptyCartMessage": "Sepetiniz boş.",
-    "totalLabel": "Toplam",
-    "removeItemButton": "Kaldır"
-  },
-  "Navigation": {
+  "header": {
+    "title": "E-Ticaret Uygulaması",
     "home": "Anasayfa",
     "products": "Ürünler",
     "cart": "Sepet"
+  },
+  "products": {
+    "title": "Öne Çıkan Ürünler",
+    "loading": "Ürünler yükleniyor...",
+    "error": "Ürünler yüklenirken bir hata oluştu.",
+    "viewDetails": "Detayları Gör",
+    "categories": "Kategoriler",
+    "priceRange": "Fiyat Aralığı",
+    "minPrice": "Min Fiyat",
+    "maxPrice": "Max Fiyat",
+    "sortBy": "Sırala",
+    "sortOptions": {
+      "default": "Varsayılan",
+      "priceAsc": "Fiyat: Artan",
+      "priceDesc": "Fiyat: Azalan",
+      "nameAsc": "İsim: A'dan Z'ye",
+      "nameDesc": "İsim: Z'den A'ya"
+    },
+    "resetFilters": "Filtreleri sıfırla",
+    "showingProducts": "görüntülenen ürün",
+    "of": "/",
+    "noProducts": "Ürün bulunamadı",
+    "adjustFilters": "Filtreleri değiştirip tekrar deneyin",
+    "addToCart": "Sepete Ekle"
+  },
+  "cart": {
+    "title": "Alışveriş Sepetiniz",
+    "remove": "Kaldır",
+    "total": "Toplam",
+    "empty": "Sepetiniz boş",
+    "continueShopping": "Alışverişe devam et"
+  },
+  "productDetail": {
+    "addedToCart": "sepete eklendi!"
+  },
+  "categories": {
+    "all": "tümü",
+    "electronics": "elektronik",
+    "jewelery": "mücevher",
+    "men's clothing": "erkek giyim",
+    "women's clothing": "kadın giyim"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır."
   }
 }

@@ -1,26 +1,56 @@
 {
-  "Index": {
-    "title": "Welcome to the E-Commerce App!",
-    "description": "Discover our featured products."
+  "home": {
+    "title": "E-Commerce App",
+    "subtitle": "Discover our featured products."
   },
-  "Products": {
-    "title": "All Products",
-    "categoryLabel": "Category",
-    "sortByLabel": "Sort By"
-  },
-  "ProductDetail": {
-    "addToCartButton": "Add to Cart",
-    "addedToCartAlert": "{productName} has been added to the cart!"
-  },
-  "Cart": {
-    "title": "Your Shopping Cart",
-    "emptyCartMessage": "Your cart is empty.",
-    "totalLabel": "Total",
-    "removeItemButton": "Remove"
-  },
-  "Navigation": {
+  "header": {
+    "title": "E-Commerce App",
     "home": "Home",
     "products": "Products",
     "cart": "Cart"
+  },
+  "products": {
+    "title": "Featured Products",
+    "loading": "Loading products...",
+    "error": "Something went wrong while loading products.",
+    "viewDetails": "View Details",
+    "categories": "Categories",
+    "priceRange": "Price Range",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "sortBy": "Sort By",
+    "sortOptions": {
+      "default": "Default",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "nameAsc": "Name: A to Z",
+      "nameDesc": "Name: Z to A"
+    },
+    "resetFilters": "Reset all filters",
+    "showingProducts": "products showing",
+    "of": "of",
+    "noProducts": "No products found",
+    "adjustFilters": "Try adjusting your filters",
+    "addToCart": "Add to Cart"
+  },
+  "cart": {
+    "title": "Your Shopping Cart",
+    "remove": "Remove",
+    "total": "Total",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue shopping"
+  },
+  "productDetail": {
+    "addedToCart": "has been added to the cart!"
+  },
+  "categories": {
+    "all": "All",
+    "electronics": "Electronics",
+    "jewelery": "Jewelery",
+    "men's clothing": "Men's Clothing",
+    "women's clothing": "Women's Clothing"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }
