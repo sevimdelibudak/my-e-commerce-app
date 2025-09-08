@@ -1,7 +1,8 @@
 // app/products/[productId]/page.tsx
 import { getProductById } from "@/lib/api";
 import ProductDetailClient from "./ProductDetailClient";
-import { Metadata } from 'next'; // Metadata türünü import et
+import { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
 
 // Ürün için bir tip tanımı
 type Product = {
@@ -41,10 +42,24 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
     // Hata durumunda bir fallback UI gösterebiliriz.
   }
 
+  // Çeviri fonksiyonu (server component için)
+  const t = (key: 'notFound') => {
+    // Basit bir fallback, SSR için next-intl'ın server fonksiyonları kullanılabilir
+    const tr: Record<'notFound', string> = {
+      notFound: "Ürün bulunamadı."
+    };
+    const en: Record<'notFound', string> = {
+      notFound: "Product not found."
+    };
+    // Locale'i URL'den çek
+    const locale = typeof window === 'undefined' ? 'tr' : window.location.pathname.split('/')[1] || 'tr';
+    return (locale === 'en' ? en[key] : tr[key]) || key;
+  };
+
   if (!product) {
     return (
       <div className="container mx-auto p-4 text-center mt-10">
-        Product not found.
+        {t('notFound')}
       </div>
     );
   }

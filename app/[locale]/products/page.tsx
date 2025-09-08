@@ -1,6 +1,6 @@
 // app/products/page.tsx
 'use client';
-
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,6 +20,7 @@ type Product = {
 type SortOption = 'default' | 'price-asc' | 'price-desc' | 'name-asc' | 'name-desc';
 
 export default function ProductsPage() {
+  const t = useTranslations('products');
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
@@ -117,7 +118,7 @@ export default function ProductsPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold text-center mb-8">Featured Products</h1>
+  <h1 className="text-4xl font-bold text-center mb-8">{t('featuredProducts')}</h1>
 
       {/* Filter Section */}
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
@@ -125,7 +126,7 @@ export default function ProductsPage() {
           
           {/* Kategori Filtreleme */}
           <div className="flex-1">
-            <h3 className="text-lg font-semibold mb-3">Categories</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('categories')}</h3>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
@@ -137,7 +138,7 @@ export default function ProductsPage() {
                       : 'bg-white text-gray-800 hover:bg-gray-100 border border-gray-300'
                     }`}
                 >
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {t('category.' + category) || (category.charAt(0).toUpperCase() + category.slice(1))}
                 </button>
               ))}
             </div>
@@ -145,11 +146,11 @@ export default function ProductsPage() {
 
           {/* Fiyat Aralığı */}
           <div className="flex-1">
-            <h3 className="text-lg font-semibold mb-3">Price Range</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('priceRange')}</h3>
             <div className="space-y-3">
               <div className="flex gap-4 items-center">
                 <div className="flex-1">
-                  <label className="block text-sm text-gray-600 mb-1">Min Price</label>
+                  <label className="block text-sm text-gray-600 mb-1">{t('minPrice')}</label>
                   <input
                     type="number"
                     value={currentPriceRange.min}
@@ -160,7 +161,7 @@ export default function ProductsPage() {
                   />
                 </div>
                 <div className="flex-1">
-                  <label className="block text-sm text-gray-600 mb-1">Max Price</label>
+                  <label className="block text-sm text-gray-600 mb-1">{t('maxPrice')}</label>
                   <input
                     type="number"
                     value={currentPriceRange.max}
@@ -172,24 +173,24 @@ export default function ProductsPage() {
                 </div>
               </div>
               <div className="text-sm text-gray-600">
-                Price range: ${currentPriceRange.min} - ${currentPriceRange.max}
+                {t('priceRangeLabel', { min: currentPriceRange.min, max: currentPriceRange.max })}
               </div>
             </div>
           </div>
 
           {/* Sıralama */}
           <div className="flex-1">
-            <h3 className="text-lg font-semibold mb-3">Sort By</h3>
+            <h3 className="text-lg font-semibold mb-3">{t('sortBy')}</h3>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as SortOption)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="default">Default</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-              <option value="name-asc">Name: A to Z</option>
-              <option value="name-desc">Name: Z to A</option>
+              <option value="default">{t('sort.default')}</option>
+              <option value="price-asc">{t('sort.priceAsc')}</option>
+              <option value="price-desc">{t('sort.priceDesc')}</option>
+              <option value="name-asc">{t('sort.nameAsc')}</option>
+              <option value="name-desc">{t('sort.nameDesc')}</option>
             </select>
           </div>
 
@@ -201,10 +202,10 @@ export default function ProductsPage() {
             onClick={resetFilters}
             className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 underline"
           >
-            Reset all filters
+            {t('resetFilters')}
           </button>
           <div className="text-sm text-gray-600">
-            Showing {filteredProducts.length} of {products.length} products
+            {t('showingProducts', { count: filteredProducts.length, total: products.length })}
           </div>
         </div>
       </div>
@@ -213,8 +214,8 @@ export default function ProductsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {filteredProducts.length === 0 && !isLoading ? (
           <div className="col-span-full text-center text-gray-600 py-12">
-            <div className="text-xl mb-2">No products found</div>
-            <div className="text-sm">Try adjusting your filters</div>
+            <div className="text-xl mb-2">{t('noProductsFound')}</div>
+            <div className="text-sm">{t('tryAdjustingFilters')}</div>
           </div>
         ) : (
           filteredProducts.map((product) => (
@@ -231,7 +232,7 @@ export default function ProductsPage() {
                 </div>
                 <h3 className="text-lg font-semibold mb-2 flex-grow">{product.title}</h3>
                 <p className="text-xl font-bold text-blue-600 mb-2">${product.price.toFixed(2)}</p>
-                <p className="text-sm text-gray-500 capitalize">{product.category}</p>
+                <p className="text-sm text-gray-500 capitalize">{t('category.' + product.category) || product.category}</p>
               </div>
             </Link>
           ))

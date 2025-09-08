@@ -10,28 +10,40 @@
     "cart": "Cart"
   },
   "products": {
-    "title": "Featured Products",
+  "title": "Featured Products",
+  "featuredProducts": "Featured Products",
+  "addedToCart": "{title} has been added to the cart!",
     "loading": "Loading products...",
     "error": "Something went wrong while loading products.",
     "viewDetails": "View Details",
     "categories": "Categories",
+    "category": {
+      "all": "All",
+      "electronics": "Electronics",
+      "jewelery": "Jewelery",
+      "men's clothing": "Men's Clothing",
+      "women's clothing": "Women's Clothing"
+    },
     "priceRange": "Price Range",
     "minPrice": "Min Price",
     "maxPrice": "Max Price",
     "sortBy": "Sort By",
-    "sortOptions": {
+    "sort": {
       "default": "Default",
       "priceAsc": "Price: Low to High",
       "priceDesc": "Price: High to Low",
       "nameAsc": "Name: A to Z",
       "nameDesc": "Name: Z to A"
     },
+  "priceRangeLabel": "Showing products between ${min} and ${max}",
     "resetFilters": "Reset all filters",
     "showingProducts": "products showing",
     "of": "of",
     "noProducts": "No products found",
     "adjustFilters": "Try adjusting your filters",
-    "addToCart": "Add to Cart"
+  "addToCart": "Add to Cart",
+  "noProductsFound": "No products found",
+  "tryAdjustingFilters": "Try adjusting your filters"
   },
   "cart": {
     "title": "Your Shopping Cart",
@@ -43,14 +55,9 @@
   "productDetail": {
     "addedToCart": "has been added to the cart!"
   },
-  "categories": {
-    "all": "All",
-    "electronics": "Electronics",
-    "jewelery": "Jewelery",
-    "men's clothing": "Men's Clothing",
-    "women's clothing": "Women's Clothing"
-  },
+
   "footer": {
+    "appName": "E-Commerce App",
     "rights": "All rights reserved."
   }
 }

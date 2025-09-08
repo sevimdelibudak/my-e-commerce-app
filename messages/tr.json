@@ -11,6 +11,15 @@
   },
   "products": {
     "title": "Öne Çıkan Ürünler",
+    "featuredProducts": "Öne Çıkan Ürünler",
+    "addedToCart": "{title} sepete eklendi!",
+    "category": {
+      "all": "Tümü",
+      "electronics": "Elektronik",
+      "jewelery": "Takı",
+      "men's clothing": "Erkek Giyim",
+      "women's clothing": "Kadın Giyim"
+    },
     "loading": "Ürünler yükleniyor...",
     "error": "Ürünler yüklenirken bir hata oluştu.",
     "viewDetails": "Detayları Gör",
@@ -19,19 +28,22 @@
     "minPrice": "Min Fiyat",
     "maxPrice": "Max Fiyat",
     "sortBy": "Sırala",
-    "sortOptions": {
+    "sort": {
       "default": "Varsayılan",
       "priceAsc": "Fiyat: Artan",
       "priceDesc": "Fiyat: Azalan",
       "nameAsc": "İsim: A'dan Z'ye",
       "nameDesc": "İsim: Z'den A'ya"
     },
+  "priceRangeLabel": "${min} ile ${max} arasındaki ürünler gösteriliyor",
     "resetFilters": "Filtreleri sıfırla",
     "showingProducts": "görüntülenen ürün",
     "of": "/",
     "noProducts": "Ürün bulunamadı",
     "adjustFilters": "Filtreleri değiştirip tekrar deneyin",
-    "addToCart": "Sepete Ekle"
+  "addToCart": "Sepete Ekle",
+  "noProductsFound": "Ürün bulunamadı",
+  "tryAdjustingFilters": "Filtreleri değiştirip tekrar deneyin"
   },
   "cart": {
     "title": "Alışveriş Sepetiniz",
@@ -43,14 +55,9 @@
   "productDetail": {
     "addedToCart": "sepete eklendi!"
   },
-  "categories": {
-    "all": "tümü",
-    "electronics": "elektronik",
-    "jewelery": "mücevher",
-    "men's clothing": "erkek giyim",
-    "women's clothing": "kadın giyim"
-  },
+  
   "footer": {
+    "appName": "E-Ticaret Uygulaması",
     "rights": "Tüm hakları saklıdır."
   }
 }

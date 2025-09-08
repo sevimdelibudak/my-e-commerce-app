@@ -1,5 +1,7 @@
 // app/cart/page.tsx
+
 'use client';
+import { useTranslations } from 'next-intl';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/lib/store';
@@ -7,10 +9,11 @@ import { removeItemFromCart, updateItemQuantity } from '@/lib/store/cartSlice'; 
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 export default function CartPage() {
+  const t = useTranslations('cart');
   const dispatch = useDispatch();
-  // useSelector'da RootState tipini doğru kullanın
-  const cartItems = useSelector((state: RootState) => state.cart.items); 
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleRemoveItem = (id: number) => {
     dispatch(removeItemFromCart(id));
@@ -27,10 +30,9 @@ export default function CartPage() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Your Shopping Cart</h1>
-      
+      <h1 className="text-3xl font-bold mb-6">{t('title')}</h1>
       {cartItems.length === 0 ? (
-        <div className="text-center text-gray-600">Your cart is empty.</div>
+        <div className="text-center text-gray-600">{t('empty')}</div>
       ) : (
         <>
           <div className="space-y-4">
@@ -62,14 +64,14 @@ export default function CartPage() {
                     onClick={() => handleRemoveItem(item.id)}
                     className="text-red-500 hover:text-red-700 transition-colors"
                   >
-                    Remove
+                    {t('remove')}
                   </button>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-8 text-right text-2xl font-bold">
-            Total: ${cartTotal}
+            {t('total')}: ${cartTotal}
           </div>
         </>
       )}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '@/lib/store/cartSlice';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 // Ürün için bir tip tanımı
 type Product = {
@@ -17,9 +18,11 @@ type Product = {
 };
 
 // Bu bileşen sadece etkileşimli kısımları içerecek.
+
 export default function ProductDetailClient({ product }: { product: Product }) {
   const dispatch = useDispatch();
   const router = useRouter();
+  const t = useTranslations('products');
 
   const handleAddToCart = () => {
     const newCartItem = {
@@ -30,10 +33,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       quantity: 1,
     };
     dispatch(addItemToCart(newCartItem));
-    alert(`${product.title} has been added to the cart!`);
+    alert(t('addedToCart', { title: product.title }));
 
     // Sepet sayfasına yönlendirme
-    // Geçerli locale'i URL'den al ve cart'a o locale ile git
     const locale = window.location.pathname.split('/')[1] || 'tr';
     router.push(`/${locale}/cart`);
   };
@@ -50,14 +52,18 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       </div>
       <div className="w-full md:w-1/2">
         <h1 className="text-4xl font-bold mb-2">{product.title}</h1>
-        <p className="text-xl text-gray-600 mb-2">{product.category}</p>
+        <p className="text-xl text-gray-600 mb-2">{
+          t(`category.${product.category}`) !== `category.${product.category}`
+            ? t(`category.${product.category}`)
+            : product.category
+        }</p>
         <p className="text-3xl font-bold text-gray-800 mb-4">${product.price}</p>
         <p className="text-gray-700 mb-6">{product.description}</p>
         <button
           onClick={handleAddToCart}
           className="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors"
         >
-          Add to Cart
+          {t('addToCart')}
         </button>
       </div>
     </div>
