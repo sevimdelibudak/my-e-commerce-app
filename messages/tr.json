@@ -10,7 +10,7 @@
     "cart": "Sepet"
   },
   "products": {
-    "title": "Öne Çıkan Ürünler",
+  "title": "Ürünler",
     "featuredProducts": "Öne Çıkan Ürünler",
     "addedToCart": "{title} sepete eklendi!",
     "category": {

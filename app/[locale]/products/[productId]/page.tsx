@@ -1,3 +1,5 @@
+// ISR: Sayfa 60 saniyede bir yeniden oluşturulacak
+export const revalidate = 60;
 // app/products/[productId]/page.tsx
 import { getProductById } from "@/lib/api";
 import ProductDetailClient from "./ProductDetailClient";

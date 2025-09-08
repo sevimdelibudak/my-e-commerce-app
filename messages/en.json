@@ -10,7 +10,7 @@
     "cart": "Cart"
   },
   "products": {
-  "title": "Featured Products",
+  "title": "Products",
   "featuredProducts": "Featured Products",
   "addedToCart": "{title} has been added to the cart!",
     "loading": "Loading products...",

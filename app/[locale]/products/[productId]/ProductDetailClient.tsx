@@ -4,8 +4,10 @@
 import Image from "next/image";
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '@/lib/store/cartSlice';
+
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { toast } from 'react-hot-toast';
 
 // Ürün için bir tip tanımı
 type Product = {
@@ -33,7 +35,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       quantity: 1,
     };
     dispatch(addItemToCart(newCartItem));
-    alert(t('addedToCart', { title: product.title }));
+  toast.success(t('addedToCart', { title: product.title }));
 
     // Sepet sayfasına yönlendirme
     const locale = window.location.pathname.split('/')[1] || 'tr';

@@ -118,14 +118,14 @@ export default function ProductsPage() {
 
   return (
     <div className="container mx-auto p-4">
-  <h1 className="text-4xl font-bold text-center mb-8">{t('featuredProducts')}</h1>
+  <h1 className="text-4xl font-bold text-center mb-8">{t('title')}</h1>
 
       {/* Filter Section */}
+
       <div className="bg-gray-50 p-6 rounded-lg mb-8">
-        <div className="flex flex-col lg:flex-row gap-6">
-          
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Kategori Filtreleme */}
-          <div className="flex-1">
+          <div>
             <h3 className="text-lg font-semibold mb-3">{t('categories')}</h3>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -145,7 +145,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Fiyat Aralığı */}
-          <div className="flex-1">
+          <div>
             <h3 className="text-lg font-semibold mb-3">{t('priceRange')}</h3>
             <div className="space-y-3">
               <div className="flex gap-4 items-center">
@@ -179,7 +179,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Sıralama */}
-          <div className="flex-1">
+          <div>
             <h3 className="text-lg font-semibold mb-3">{t('sortBy')}</h3>
             <select
               value={sortBy}
@@ -193,11 +193,10 @@ export default function ProductsPage() {
               <option value="name-desc">{t('sort.nameDesc')}</option>
             </select>
           </div>
-
         </div>
 
         {/* Reset ve Sonuçlar */}
-        <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between items-center mt-4 pt-4 border-t border-gray-200 gap-2">
           <button
             onClick={resetFilters}
             className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 underline"

@@ -28,7 +28,7 @@ export default function ProductList() {
   const currentLocale = pathname.split('/')[1] || 'tr';
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=8')
+    fetch('https://fakestoreapi.com/products?limit=4')
       .then(res => res.json())
       .then(data => {
         setProducts(data);
