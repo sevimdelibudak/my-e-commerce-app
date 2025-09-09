@@ -2,7 +2,7 @@
 
 Modern, hızlı ve çok dilli bir e-ticaret uygulaması. Next.js 15, TypeScript ve Tailwind CSS ile geliştirilmiştir.
 
-🌐 **Canlı Demo:** [my-e-commerce-app.vercel.app](https://my-e-commerce-app-git-main-sevims-projects-5fd5f3ae.vercel.app)
+🌐 **Canlı Demo:** [https://my-e-commerce-app-git-main-sevims-projects-5fd5f3ae.vercel.app]
 
 ## ✨ Özellikler
 
