@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Modern E-Commerce App
 
-## Getting Started
+Modern, hızlı ve çok dilli bir e-ticaret uygulaması. Next.js 15, TypeScript ve Tailwind CSS ile geliştirilmiştir.
 
-First, run the development server:
+🌐 **Canlı Demo:** [my-e-commerce-app.vercel.app](https://my-e-commerce-app-git-main-sevims-projects-5fd5f3ae.vercel.app)
+
+## ✨ Özellikler
+
+- 🚀 **Next.js 15** - En son Next.js özellikleri ile
+- 🌍 **Çok Dilli Destek** - Türkçe ve İngilizce
+- 📱 **Mobil Uyumlu** - Tüm cihazlarda mükemmel deneyim
+- 🎨 **Modern Tasarım** - Tailwind CSS ile güzel arayüz
+- ⚡ **Hızlı Performans** - Turbopack ile optimize edilmiş
+- 🛒 **Sepet Sistemi** - Redux ile state yönetimi
+- 🔍 **Ürün Filtreleme** - Kategori ve fiyat filtreleri
+- 🌙 **Dark Mode** - Otomatik tema desteği
+
+## 🛠️ Teknolojiler
+
+- **Framework:** Next.js 15
+- **Dil:** TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** Redux Toolkit
+- **Internationalization:** next-intl
+- **Deployment:** Vercel
+
+## 🚀 Kurulum
 
 ```bash
+# Projeyi klonlayın
+git clone https://github.com/sevimdelibudak/my-e-commerce-app.git
+cd my-e-commerce-app
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Development server'ı başlatın
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcıda `http://localhost:3000` adresini açın.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Proje Yapısı
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-e-commerce-app/
+├── app/                    # Next.js App Router
+│   ├── [locale]/          # Çok dilli routing
+│   │   ├── layout.tsx     # Ana layout
+│   │   ├── page.tsx       # Ana sayfa
+│   │   ├── products/      # Ürün sayfaları
+│   │   └── cart/          # Sepet sayfası
+│   └── globals.css        # Global stiller
+├── components/            # React bileşenleri
+├── lib/                   # Utility fonksiyonları
+├── messages/             # Çeviri dosyaları
+└── public/              # Statik dosyalar
+```
 
-## Learn More
+## 🌍 Çok Dilli Destek
 
-To learn more about Next.js, take a look at the following resources:
+- **Türkçe:** `/tr`
+- **İngilizce:** `/en`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Vercel
+GitHub repository'nizi Vercel'e bağlayın, otomatik deployment başlar.
 
-## Deploy on Vercel
+### Manuel Build
+```bash
+npm run build
+npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔧 Geliştirme
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev          # Development server
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # ESLint kontrolü
+```
+
+## 📄 Lisans
+
+MIT
