@@ -1,9 +1,8 @@
 // app/products/page.tsx
 'use client';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useEffect, useState, useCallback } from 'react';
+import ProductCard from '@/components/ProductCard';
 import { getProducts } from '@/lib/api';
 
 // Ürün için tip tanımı
@@ -95,22 +94,22 @@ export default function ProductsPage() {
     setFilteredProducts(filtered);
   }, [selectedCategory, currentPriceRange, sortBy, products]);
 
-  const handleCategoryChange = (category: string) => {
+  const handleCategoryChange = useCallback((category: string) => {
     setSelectedCategory(category);
-  };
+  }, []);
 
-  const handlePriceRangeChange = (type: 'min' | 'max', value: number) => {
+  const handlePriceRangeChange = useCallback((type: 'min' | 'max', value: number) => {
     setCurrentPriceRange(prev => ({
       ...prev,
       [type]: value
     }));
-  };
+  }, []);
 
-  const resetFilters = () => {
+  const resetFilters = useCallback(() => {
     setSelectedCategory('all');
     setCurrentPriceRange({ min: priceRange.min, max: priceRange.max });
     setSortBy('default');
-  };
+  }, [priceRange.min, priceRange.max]);
 
   if (isLoading) {
     return <div className="text-center mt-10">Loading products...</div>;
@@ -218,22 +217,7 @@ export default function ProductsPage() {
           </div>
         ) : (
           filteredProducts.map((product) => (
-            <Link href={`/products/${product.id}`} key={product.id}>
-              <div className="border rounded-lg p-4 shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center h-full">
-                <div className="relative w-full h-48 mb-4">
-                  <Image 
-                    src={product.image} 
-                    alt={product.title} 
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 flex-grow">{product.title}</h3>
-                <p className="text-xl font-bold text-blue-600 mb-2">${product.price.toFixed(2)}</p>
-                <p className="text-sm text-gray-500 capitalize">{t('category.' + product.category) || product.category}</p>
-              </div>
-            </Link>
+            <ProductCard key={product.id} product={product} locale={typeof window !== 'undefined' ? window.location.pathname.split('/')[1] || 'tr' : 'tr'} />
           ))
         )}
       </div>
