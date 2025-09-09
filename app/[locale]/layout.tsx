@@ -1,19 +1,16 @@
 
 import { NextIntlClientProvider } from 'next-intl';
-import { ReactNode } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-type Props = {
-  children: ReactNode;
-  params: { locale: string };
-};
-
-export default async function LocaleLayout({ children, params }: Props) {
-  const resolvedParams = await params;
-  const locale = (resolvedParams && resolvedParams.locale) ? resolvedParams.locale : 'tr';
-  const messages = (await import(`@/messages/${locale}.json`)).default;
-  console.log('LOCALE:', locale, 'MESSAGES:', messages);
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  let messages: any;
+  try {
+    messages = require(`@/messages/${locale}.json`);
+  } catch {
+    messages = require('@/messages/tr.json');
+  }
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <div className="flex flex-col min-h-screen">
