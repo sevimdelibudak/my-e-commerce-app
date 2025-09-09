@@ -43,27 +43,43 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 items-center">
-      <div className="w-full md:w-1/2 relative h-96">
+    <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+      <div className="w-full lg:w-1/2 relative h-80 sm:h-96 lg:h-[500px] bg-slate-50 dark:bg-slate-800 rounded-2xl overflow-hidden">
         <Image
           src={product.image}
           alt={product.title}
           fill
-          className="object-contain"
+          className="object-contain p-4"
         />
       </div>
-      <div className="w-full md:w-1/2">
-        <h1 className="text-4xl font-bold mb-2">{product.title}</h1>
-        <p className="text-xl text-gray-600 mb-2">{
-          t(`category.${product.category}`) !== `category.${product.category}`
-            ? t(`category.${product.category}`)
-            : product.category
-        }</p>
-        <p className="text-3xl font-bold text-gray-800 mb-4">${product.price}</p>
-        <p className="text-gray-700 mb-6">{product.description}</p>
+      <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
+        <div>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 text-slate-800 dark:text-slate-200 leading-tight">
+            {product.title}
+          </h1>
+          <div className="flex items-center space-x-2 mb-4">
+            <span className="inline-block bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium px-3 py-1 rounded-full border border-slate-200 dark:border-slate-600">
+              {t(`category.${product.category}`) !== `category.${product.category}`
+                ? t(`category.${product.category}`)
+                : product.category
+              }
+            </span>
+          </div>
+        </div>
+        
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 sm:p-6 rounded-2xl">
+          <p className="text-2xl sm:text-3xl font-bold">${product.price}</p>
+        </div>
+        
+        <div className="prose prose-slate dark:prose-invert max-w-none">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+            {product.description}
+          </p>
+        </div>
+        
         <button
           onClick={handleAddToCart}
-          className="bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition-colors"
+          className="w-full sm:w-auto bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
         >
           {t('addToCart')}
         </button>
