@@ -5,7 +5,8 @@ import { useTranslations } from 'next-intl';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/lib/store';
-import { removeItemFromCart, updateItemQuantity } from '@/lib/store/cartSlice'; // Bu satırı değiştir
+import { removeItemFromCart, updateItemQuantity } from '@/lib/store/cartSlice';
+import { toast } from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,7 +17,11 @@ export default function CartPage() {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleRemoveItem = (id: number) => {
+    const removedItem = cartItems.find(item => item.id === id);
     dispatch(removeItemFromCart(id));
+    if (removedItem) {
+      toast.success(t('removedFromCart', { title: removedItem.title }));
+    }
   };
 
   const handleQuantityChange = (id: number, quantity: number) => {

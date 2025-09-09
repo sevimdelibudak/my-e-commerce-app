@@ -50,7 +50,8 @@
     "remove": "Remove",
     "total": "Total",
     "empty": "Your cart is empty",
-    "continueShopping": "Continue shopping"
+    "continueShopping": "Continue shopping",
+    "removedFromCart": "{title} removed from cart!"
   },
   "productDetail": {
     "addedToCart": "has been added to the cart!"

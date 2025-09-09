@@ -9,8 +9,21 @@
     "products": "Ürünler",
     "cart": "Sepet"
   },
+
+  "cart": {
+    "title": "Alışveriş Sepetiniz",
+    "remove": "Kaldır",
+    "total": "Toplam",
+    "empty": "Sepetiniz boş",
+    "continueShopping": "Alışverişe devam et",
+    "removedFromCart": "{title} sepetten çıkarıldı!"
+  },
+  "productDetail": {
+    "addedToCart": "sepete eklendi!"
+  },
+  
   "products": {
-  "title": "Ürünler",
+    "title": "Ürünler",
     "featuredProducts": "Öne Çıkan Ürünler",
     "addedToCart": "{title} sepete eklendi!",
     "category": {
@@ -35,27 +48,16 @@
       "nameAsc": "İsim: A'dan Z'ye",
       "nameDesc": "İsim: Z'den A'ya"
     },
-  "priceRangeLabel": "${min} ile ${max} arasındaki ürünler gösteriliyor",
+    "priceRangeLabel": "${min} ile ${max} arasındaki ürünler gösteriliyor",
     "resetFilters": "Filtreleri sıfırla",
     "showingProducts": "görüntülenen ürün",
     "of": "/",
     "noProducts": "Ürün bulunamadı",
     "adjustFilters": "Filtreleri değiştirip tekrar deneyin",
-  "addToCart": "Sepete Ekle",
-  "noProductsFound": "Ürün bulunamadı",
-  "tryAdjustingFilters": "Filtreleri değiştirip tekrar deneyin"
+    "addToCart": "Sepete Ekle",
+    "noProductsFound": "Ürün bulunamadı",
+    "tryAdjustingFilters": "Filtreleri değiştirip tekrar deneyin"
   },
-  "cart": {
-    "title": "Alışveriş Sepetiniz",
-    "remove": "Kaldır",
-    "total": "Toplam",
-    "empty": "Sepetiniz boş",
-    "continueShopping": "Alışverişe devam et"
-  },
-  "productDetail": {
-    "addedToCart": "sepete eklendi!"
-  },
-  
   "footer": {
     "appName": "E-Ticaret Uygulaması",
     "rights": "Tüm hakları saklıdır."
