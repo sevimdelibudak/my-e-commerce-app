@@ -2,10 +2,21 @@ import { Metadata } from 'next';
 import ProductList from '../../components/ProductList';
 import HomePageClient from '../../components/HomePageClient';
 
-export const metadata: Metadata = {
-  title: 'My E-Commerce | Home',
-  description: 'Modern, çok dilli ve hızlı bir e-ticaret uygulaması.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const base = locale === 'en' ? '/en' : '/tr';
+  return {
+    title: 'My E-Commerce | Home',
+    description: 'Modern, çok dilli ve hızlı bir e-ticaret uygulaması.',
+    alternates: {
+      canonical: base,
+      languages: {
+        en: '/en',
+        tr: '/tr',
+      },
+    },
+  };
+}
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
