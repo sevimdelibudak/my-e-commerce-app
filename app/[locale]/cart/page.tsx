@@ -1,6 +1,10 @@
 // app/cart/page.tsx
 
 'use client';
+export const metadata = {
+  title: 'Sepet | E-Commerce App',
+  description: 'Sepetinizi görüntüleyin, ürün adetlerini güncelleyin ve satın alma işlemini tamamlayın.',
+};
 import { useTranslations } from 'next-intl';
 
 import { useSelector, useDispatch } from 'react-redux';
